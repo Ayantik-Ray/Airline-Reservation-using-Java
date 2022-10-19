@@ -1,0 +1,16 @@
+import javax.swing.JFrame;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+class Show
+{
+   public static void main(String args[])
+   {
+       JFrame frame=new JFrame();
+       ImageIcon icon=new ImageIcon("D:\\Digha 2013\\Digha 2013\\DSC02327.JPG");
+       JLabel label=new JLabel(icon);
+       frame.add(label);
+       frame.setDefaultCloseOperation(Jframe.EXIT_ON_CLOSE);
+       frame.pack();
+       frame.setVisible(true);
+    }
+}

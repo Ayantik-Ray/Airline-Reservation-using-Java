@@ -1,0 +1,1 @@
+g.drawImage(image,50,10,1300,100,this);

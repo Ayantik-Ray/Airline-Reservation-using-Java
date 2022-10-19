@@ -1,0 +1,56 @@
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.event.*;
+import java.awt.image.*;
+import java.io.*;
+import javax.imageio.*;
+import javax.swing.*;
+public class LoadAnshowImageFromFile extends JPanel
+{
+    BufferedImage image;
+    private static JPanel imagePanel;
+    private static JFrame frame;
+    private String dir="D:\\Digha 2013\\Digha 2013\\DSC02327.JPG";
+    public LoadAnshowImageFromFile()
+    {
+        try{
+            image=ImageIO.read(new File(dir));
+        }
+        catch(IOException e)
+        {
+            System.out.println("Erroe reading dir: "+e.getMessage());
+        }
+    }
+    public Dimension getPreferredSize()
+    {
+        if(image==null)
+        {
+            return new Dimension(100,100);
+        }
+        else
+        {
+            return new Dimension(5000,660);
+        }
+    }
+    public void paint(Graphics g)
+    {
+        g.drawImage(image,0,0,null);
+    }
+    public static void main(String args[])
+    {
+        frame=new JFrame("Loading Image From File Example");
+        imagePanel=new JPanel();
+        frame.addWindowListener(new WindowAdapter(){
+            public void windowClosing(WindowEvent e)
+            {
+                System.exit(0);
+            }
+        });
+        imagePanel.add(new LoadAnshowImageFromFile());
+        frame.add(imagePanel);
+        frame.pack();
+        frame.setVisible(true);
+    }
+}
+
+   

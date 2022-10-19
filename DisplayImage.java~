@@ -1,0 +1,22 @@
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+public class DisplayImage
+{
+   //static String img_path="C:\\Users\\Public\\Pictures\\Sample Pictures\\Tulips.jpg";
+   static String img_path="D:\\Digha 2013\\Digha 2013\\DSC02366.JPG";
+   public static void main(String args[]) throws IOException
+   {
+       JFrame frame=new JFrame();
+       BufferedImage img=ImageIO.read(new File(img_path));
+       ImageIcon icon=new ImageIcon(img);
+       JLabel label=new JLabel(icon);
+       frame.add(label);
+       frame.setExtendedState(frame.getExtendedState()|JFrame.MAXIMIZED_BOTH);
+       frame.setVisible(true);   
+    }
+}
